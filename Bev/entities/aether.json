@@ -2,7 +2,7 @@
   "minecraft:entity": {
 		"format_version": "1.8.0",
     "description": {
-      "identifier": "avengers:aether",
+      "identifier": "ae:aether",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
