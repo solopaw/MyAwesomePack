@@ -1,0 +1,111 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.thanos.base_pose": {
+      "states": {
+        "default": {
+          "animations": [ { "thanos_base_pose": [] } ]
+        }
+      }
+    },
+    "controller.animation.thanos.move": {
+      "states": {
+        "default": {
+          "animations": [ { "move": [] } ]
+        }
+      }
+    },
+    "controller.animation.thanos.riding": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "riding": "query.is_riding" }
+          ]
+        },
+        "riding": {
+          "animations": [
+            { "riding.arms": [] }
+          ],
+          "transitions": [
+            { "default": "!query.is_riding" }
+          ]
+        }
+      }
+    },
+    "controller.animation.thanos.holding": {
+      "states": {
+        "default": {
+          "animations": [ { "holding": [] } ]
+        }
+      }
+    },
+    "controller.animation.thanos.charging": {
+      "states": {
+        "default": {
+          "transitions": [ { "charging": "query.is_charging" } ]
+        },
+        "charging": {
+          "animations": [ { "charging": [] } ],
+          "transitions": [ { "default": "!query.is_charging" } ]
+        }
+      }
+    },
+    "controller.animation.thanos.attack": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "attacking": "variable.attack_time >= 0.0" }
+          ]
+        },
+        "attacking": {
+          "animations": [
+            { "attack.rotations": [] }
+          ],
+          "transitions": [
+            { "default": "variable.attack_time < 0.0" }
+          ]
+        }
+      }
+    },
+    "controller.animation.thanos.sneaking": {
+      "states": {
+        "default": {
+          "transitions": [ { "sneaking": "query.is_sneaking" } ]
+        },
+        "sneaking": {
+          "animations": [ { "sneaking": [] } ],
+          "transitions": [ { "default": "!query.is_sneaking" } ]
+        }
+      }
+    },
+    "controller.animation.thanos.bob": {
+      "states": {
+        "default": {
+          "animations": [ { "bob": [] } ]
+        }
+      }
+    },
+    "controller.animation.thanos.damage_nearby_mobs": {
+      "states": {
+        "default": {
+          "transitions": [ { "damage_nearby_mobs": "variable.damage_nearby_mobs" } ]
+        },
+        "damage_nearby_mobs": {
+          "animations": [ { "damage_nearby_mobs": [] } ],
+          "transitions": [ { "default": "!variable.damage_nearby_mobs" } ]
+        }
+      }
+    },
+    "controller.animation.thanos.use_item_progress": {
+      "states": {
+        "default": {
+          "transitions": [ { "use_item_progress": "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 )" } ]
+        },
+        "use_item_progress": {
+          "animations": [ { "use_item_progress": [] } ],
+          "transitions": [ { "default": "( variable.use_item_interval_progress <= 0.0 ) && ( variable.use_item_startup_progress <= 0.0 )" } ]
+        }
+      }
+    }
+  }
+}

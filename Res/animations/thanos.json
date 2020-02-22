@@ -1,0 +1,144 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.thanos.attack.rotations" : {
+			"bones" : {
+				"body" : {
+					"rotation" : [ 0.0, "variable.attack_body_rot_y - this", 0.0 ]
+				},
+				"leftarm" : {
+					"rotation" : [ "variable.attack_body_rot_y", 0.0, 0.0 ]
+				},
+				"shield" : {
+					"rotation" : [ "variable.attack_body_rot_x", 0.0, 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ "math.sin(1.0 - math.pow(1.0 - variable.attack_time, 3.0) * 180.0) * (variable.is_brandishing_spear ? -1.0 : 1.0 )", "variable.is_brandishing_spear ? 0.0 : variable.attack_body_rot_y * 2.0", 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.base_pose" : {
+			"bones" : {
+				"waist" : {
+					"rotation" : [ 0.0, 0.0, 0.0 ]
+				},
+				"shield" : {
+					"scale" : [ 0.2, 0.2, 0.2 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.bob" : {
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ 0.0, 0.0, "((math.cos(query.life_time * 103.2) * 2.865) + 2.865) *-1.0" ]
+				},
+				"shield" : {
+					"rotation" : [ 0.0, 0.0, "((math.cos(query.life_time * 103.2) * 2.865) + 2.865) *-1.0" ]
+				},
+				"leftleg" : {
+					"rotation" : [ "-math.sin(query.life_time * 76.8) * 2.865", 0.0, 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ 0.0, 0.0, "(math.cos(query.life_time * 103.2) * 2.865) + 2.865" ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.damage_nearby_mobs" : {
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ "-45.0-this", "-this", "-this" ]
+				},
+				"shield" : {
+					"rotation" : [ "-this", "-45.0-this", "-this" ]
+				},
+				"leftleg" : {
+					"rotation" : [ "45.0-this", "-this", "-this" ]
+				},
+				"rightarm" : {
+					"rotation" : [ "45.0-this", "-this", "-this" ]
+				},
+				"rightleg" : {
+					"rotation" : [ "-45.0-this", "-this", "-this" ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.holding" : {
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ "variable.is_holding_left ? (-this * 0.5 - 18.0) : 0.0", 0.0, 0.0 ]
+				},
+				"shield" : {
+					"rotation" : [ 0.0, "variable.is_holding_left ? (-this * 0.5 - 18.0) : 0.0", 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ "variable.is_holding_right ? (-this * 0.5 - 18.0) : 0.0", 0.0, 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.move" : {
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ "variable.tcos0", 0.0, 0.0 ]
+				},
+				"shield" : {
+					"rotation" : [ 0.0, "variable.tcos0", 0.0 ]
+				},
+				"leftleg" : {
+					"rotation" : [ "variable.tcos1 * 1.4", 0.0, 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ "variable.tcos1", 0.0, 0.0 ]
+				},
+				"rightleg" : {
+					"rotation" : [ "variable.tcos0 * 1.4", 0.0, 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.riding.arms" : {
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ -36.0, 0.0, 0.0 ]
+				},
+				"shield" : {
+					"rotation" : [ 0.0, -36.0, 0.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ -36.0, 0.0, 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.thanos.sneaking" : {
+			"bones" : {
+				"body" : {
+					"rotation" : [ "0.5 - this", 0.0, 0.0 ]
+				},
+				"head" : {
+					"position" : [ 0.0, 1.0, 0.0 ]
+				},
+				"leftarm" : {
+					"rotation" : [ 72.0, 0.0, 0.0 ]
+				},
+				"shield" : {
+					"rotation" : [ 72.0, 0.0, 0.0 ]
+				},
+				"leftleg" : {
+					"position" : [ 0.0, -3.0, 4.0 ]
+				},
+				"rightarm" : {
+					"rotation" : [ 72.0, 0.0, 0.0 ]
+				},
+				"rightleg" : {
+					"position" : [ 0.0, -3.0, 4.0 ]
+				}
+			},
+			"loop" : true
+		}
+	}
+}
