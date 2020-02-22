@@ -1,0 +1,44 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "avengers_items": {
+      "textures": [
+        "textures/items/tesseract",
+        "textures/items/orb",
+        "textures/items/egg_vision_defeated",
+        "textures/items/aether",
+        "textures/items/necklace"
+      ]
+    },
+    "avengers_eggs": {
+      "textures": [
+        "textures/items/egg_iron_man",
+        "textures/items/egg_captain_america",
+        "textures/items/egg_thor",
+        "textures/items/egg_hulk",
+        "textures/items/egg_black_widow",
+        "textures/items/egg_hawkeye",
+        "textures/items/egg_iron_spider",
+        "textures/items/egg_war_machine",
+        "textures/items/egg_falcon",
+        "textures/items/egg_black_panther",
+        "textures/items/egg_star_lord",
+        "textures/items/egg_gamora",
+        "textures/items/egg_drax",
+        "textures/items/egg_rocket",
+        "textures/items/egg_mantis",
+        "textures/items/egg_nebula",
+        "textures/items/egg_doctor_strange",
+        "textures/items/egg_scarlet_witch",
+        "textures/items/egg_vision",
+        "textures/items/egg_winter_soldier",
+        "textures/items/egg_outrider",
+        "textures/items/egg_thanos",
+        "textures/items/egg_captain_marvel",
+        "textures/items/egg_red_skull",
+        "textures/items/egg_groot"
+      ]
+    }
+  }
+}

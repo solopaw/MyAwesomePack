@@ -1,0 +1,20 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/netherrack",
+    "atlas_tile": "netherrack",
+    "ticks_per_frame": 5,
+    "frames": [ 0, 1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 3, 2, 1 ]
+  },
+  {
+    "flipbook_texture": "textures/blocks/lava_still",
+    "atlas_tile": "still_lava",
+    "ticks_per_frame": 5,
+    "frames": [ 0, 1, 2, 3, 4, 5, 4, 3, 2, 7, 6, 1, 2, 3, 4, 5, 4, 3, 2, 1 ]
+  },
+  {
+    "flipbook_texture": "textures/blocks/lava_flow",
+    "atlas_tile": "flowing_lava",
+    "ticks_per_frame": 5,
+    "frames": [ 0, 1, 2, 3, 4, 5, 4, 3, 2, 7, 6, 1, 2, 3, 4, 5, 4, 3, 2, 1 ]
+  }
+]
