@@ -1,0 +1,63 @@
+{
+  "minecraft:entity": {
+		"format_version": "1.8.0",
+    "description": {
+      "identifier": "avengers:vision_defeated",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+         "minecraft:open": {
+				"minecraft:transformation": {
+					"into": "avengers:vision_defeated_stone",
+          "transformation_sound": "break",
+					"delay": 0.0,
+					"drop_equipment": false
+				}
+       }
+    },
+
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "vision" ]
+      },
+			"minecraft:is_stackable": {},
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 0.4
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+        "minecraft:damage_sensor": [
+                                {
+                    "on_damage": {
+                         "filters":
+                              {"test" :  "is_family", "subject" : "other", "value" :  "player" },
+                         "event": "minecraft:open"
+                                 },
+                    "deals_damage": false
+              }
+           ],
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:open": {
+        "add": {
+          "component_groups": [
+            "minecraft:open"
+          ]
+        }
+      }
+    }
+  }
+}

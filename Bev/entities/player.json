@@ -1,0 +1,987 @@
+{
+  "minecraft:entity": {
+    "format_version": "1.8.0",
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+			"scripts": {
+				"animate": [
+					"walk",
+					"time",
+					"space",
+					"reality",
+					"snap",
+					"power"
+				]
+			},
+			"animations": {
+				"walk": "controller.animation.walk",
+				"space": "controller.animation.space",
+				"time": "controller.animation.time",
+				"reality": "controller.animation.reality",
+				"snap": "controller.animation.snap",
+				"power": "controller.animation.power"
+			}
+    },
+    "component_groups": {
+      "minecraft:space": {
+        "minecraft:is_saddled": {
+        }
+    },
+      "minecraft:no_spawn": {
+      "minecraft:teleport": {
+        "randomTeleports": true,
+        "maxRandomTeleportTime": 1,
+        "randomTeleportCube": [ 32, 32, 32 ],
+        "lightTeleportChance": 1.0
+      }
+    },
+      "minecraft:teleport_off": {
+      "minecraft:teleport": {
+        "randomTeleports": false
+      }
+    },
+      "minecraft:default": {
+			"minecraft:knockback_resistance": {
+				"value": 0,
+				"max": 100
+			},
+			"minecraft:scale": {
+				"value": 1.0
+			},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:health": {
+					"value": 20,
+					"max": 20
+				}
+      },
+      "minecraft:big": {
+			"minecraft:scale": {
+				"value": 5.0
+			},
+				"minecraft:attack": {
+					"damage": 3
+				},
+				"minecraft:health": {
+					"value": 30,
+					"max": 30
+				},
+      "minecraft:movement": {
+        "value": 0.05
+      }
+      },
+      "minecraft:no_big": {
+			"minecraft:scale": {
+				"value": 1.0
+			},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:health": {
+					"value": 20,
+					"max": 20
+				},
+      "minecraft:movement": {
+        "value": 0.1
+      }
+      },
+      "minecraft:no_small": {
+			"minecraft:scale": {
+				"value": 1.0
+			},
+				"minecraft:attack": {
+					"damage": 1
+				},
+				"minecraft:health": {
+					"value": 20,
+					"max": 20
+				},
+      "minecraft:movement": {
+        "value": 0.1
+      }
+      },
+      "minecraft:small": {
+			"minecraft:scale": {
+				"value": 0.2
+			},
+				"minecraft:attack": {
+					"damage": 2
+				},
+				"minecraft:health": {
+					"value": 30,
+					"max": 30
+				},
+      "minecraft:movement": {
+        "value": 0.2
+      }
+      },
+      "minecraft:power": {
+        "minecraft:is_tamed": {
+        },
+				"minecraft:attack": {
+					"damage": 15
+				}
+      },
+      "minecraft:no_mind": {
+        "minecraft:spell_effects": {
+          "remove_effects": [
+            "jump_boost",
+            "speed",
+            "resistance",
+            "regeneration"
+          ]
+        }
+      },
+      "minecraft:mind": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "speed",
+							"amplifier": 3,
+							"visible": false,
+							"ambient": false,
+							"duration": 9999
+						},
+						{
+							"effect": "jump_boost",
+							"amplifier": 3,
+							"visible": false,
+							"ambient": false,
+							"duration": 9999
+						},
+						{
+							"effect": "resistance",
+							"amplifier": 5,
+							"visible": false,
+							"ambient": false,
+							"duration": 9999
+						},
+						{
+							"effect": "regeneration",
+							"amplifier": 3,
+							"visible": false,
+							"ambient": false,
+							"duration": 9999
+						}
+					]
+				}
+      },
+      "minecraft:no_time": {
+
+      },
+      "minecraft:time": {
+        "minecraft:is_chested": {
+
+        }
+      },
+      "minecraft:reality": {
+        "minecraft:is_baby": {
+        }
+      },
+      "minecraft:soul": {
+        "minecraft:spawn_entity": {
+          "min_wait_time": 0.1,
+          "max_wait_time": 0.1,
+          "spawn_entity": "minecraft:bat"
+        },
+        "minecraft:timer": {
+          "time": [ 2.0, 2.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:no_soul",
+            "target": "self"
+          }
+       }
+      },
+      "minecraft:spawn": {
+        "minecraft:is_sheared": {
+        }
+      },
+      "minecraft:no_power": {
+				"minecraft:attack": {
+					"damage": 1
+				}
+      },
+      "minecraft:move": {
+      "minecraft:movement": {
+        "value": 0.1
+      }
+      },
+      "minecraft:fist": {
+			"minecraft:knockback_resistance": {
+				"value": 75,
+				"max": 100
+			},
+				"minecraft:health": {
+					"value": 100,
+					"max": 100
+				}
+      },
+        "minecraft:spell_effects": {
+          "remove_effects": [
+            "fatal_poison"
+          ]
+        }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "player",
+          "hero"
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+			"minecraft:is_stackable": {},
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {},
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": -1,
+        "inhaleTime": 3.75,
+        "generatesBubbles": false
+      },
+      "minecraft:nameable": {
+        "alwaysShow": true,
+        "allowNameTagRenaming": false
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "armor"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [ 0.0, -1.65, 0.0 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:environment_sensor": [
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:reset"
+          }
+        },
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:fist"
+          }
+        },
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "paper"
+                }
+              ]
+            },
+            "event": "minecraft:no_big"
+          }
+        },
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "paper"
+                }
+              ]
+            },
+            "event": "minecraft:big"
+          }
+        },
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "slime_ball"
+                }
+              ]
+            },
+            "event": "minecraft:no_small"
+          }
+        },
+        {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "slime_ball"
+                }
+              ]
+            },
+            "event": "minecraft:small"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "dye:5"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:power"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "dye:5"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_power"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "dye:1"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:reality"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "dye:1"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_reality"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "dye:11"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:mind"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "dye:11"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_mind"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "dye:10"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:time"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "dye:10"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_time"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "dye:18"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:space"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "dye:18"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_space"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "dye:14"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:soul"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "dye:14"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_soul"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "magma_cream"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:spawn"
+          }
+        },
+     {
+          "on_environment": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "<>",
+                  "subject": "self",
+                  "value": "magma_cream"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "any",
+                  "operator": "=",
+                  "subject": "self",
+                  "value": "shield"
+                }
+              ]
+            },
+            "event": "minecraft:no_spawn"
+          }
+        }
+      ],
+      "minecraft:physics": {},
+      "minecraft:scaffolding_climber": { }
+    },
+    "events": {
+      "minecraft:reset": {
+        "remove": {
+          "component_groups": [
+            "minecraft:fist"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:default"
+          ]
+        }
+      },
+      "minecraft:power": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_power"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:power"
+          ]
+        }
+      },
+      "minecraft:no_power": {
+        "remove": {
+          "component_groups": [
+            "minecraft:power"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_power"
+          ]
+        }
+      },
+      "minecraft:reality": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_reality"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:reality"
+          ]
+        }
+      },
+      "minecraft:no_reality": {
+        "remove": {
+          "component_groups": [
+            "minecraft:reality"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_reality"
+          ]
+        }
+      },
+      "minecraft:mind": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_mind"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:mind"
+          ]
+        }
+      },
+      "minecraft:no_mind": {
+        "remove": {
+          "component_groups": [
+            "minecraft:mind"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_mind"
+          ]
+        }
+      },
+      "minecraft:space": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_space"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:space"
+          ]
+        }
+      },
+      "minecraft:no_space": {
+        "remove": {
+          "component_groups": [
+            "minecraft:space"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_space"
+          ]
+        }
+      },
+      "minecraft:soul": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_soul"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:soul"
+          ]
+        }
+      },
+      "minecraft:no_soul": {
+        "remove": {
+          "component_groups": [
+            "minecraft:soul"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_soul"
+          ]
+        }
+      },
+      "minecraft:time": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_time"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:time"
+          ]
+        }
+      },
+      "minecraft:no_time": {
+        "remove": {
+          "component_groups": [
+            "minecraft:time"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_time"
+          ]
+        }
+      },
+      "minecraft:big": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_big"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:big"
+          ]
+        }
+      },
+      "minecraft:no_big": {
+        "remove": {
+          "component_groups": [
+            "minecraft:big"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_big"
+          ]
+        }
+      },
+      "minecraft:small": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_small"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:small"
+          ]
+        }
+      },
+      "minecraft:no_small": {
+        "remove": {
+          "component_groups": [
+            "minecraft:small"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_small"
+          ]
+        }
+      },
+      "minecraft:no_spawn": {
+        "remove": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_spawn"
+          ]
+        }
+      },
+      "minecraft:fist": {
+        "remove": {
+          "component_groups": [
+            "minecraft:default"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:fist"
+          ]
+        }
+      },
+      "minecraft:snap": {
+        "remove": {
+          "component_groups": [
+            "minecraft:move"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:snap"
+          ]
+        }
+      },
+      "minecraft:spawn": {
+        "remove": {
+          "component_groups": [
+            "minecraft:no_spawn"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        }
+      },
+      "minecraft:black": {
+        "remove": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:black"
+          ]
+        }
+      },
+      "minecraft:move": {
+        "remove": {
+          "component_groups": [
+            "minecraft:black"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:move"
+          ]
+        }
+      },
+      "minecraft:tp_off": {
+        "add": {
+          "component_groups": [
+            "minecraft:teleport_off"
+          ]
+        }
+      }
+    }
+  }
+}

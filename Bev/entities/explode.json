@@ -1,0 +1,86 @@
+{
+  "minecraft:entity": {
+		"format_version": "1.8.0",
+    "description": {
+      "identifier": "avengers:explode",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+         "minecraft:explode": {
+        "minecraft:explode": {
+          "fuseLength": 0.01,
+          "fuseLit": true,
+          "power": 0.2,
+          "causesFire": false,
+          "destroyAffectedByGriefing": true
+        }
+}
+    },
+
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "explode" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+	  "minecraft:knockback_resistance": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:entity_born": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:explode"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_transformed": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:explode"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:explode"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

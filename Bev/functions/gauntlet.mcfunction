@@ -1,0 +1,1 @@
+replaceitem entity @s slot.weapon.offhand 1 shield

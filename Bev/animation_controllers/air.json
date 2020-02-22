@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.air": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function air"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "query.is_chested"
+						}
+					],
+					"on_entry": [
+						"/function air"
+					]
+				}
+			}
+		}
+	}
+}

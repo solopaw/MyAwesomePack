@@ -1,0 +1,550 @@
+{
+	"minecraft:entity": {
+		"format_version": "1.8.0",
+    "description": {
+      "identifier": "avengers:space_portal",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+		"component_groups": {
+			"minecraft:p1": {
+				"minecraft:variant": {
+					"value": 0
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p2",
+            "target": "self"
+          }
+       }
+			},
+			"minecraft:p2": {
+				"minecraft:variant": {
+					"value": 1
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p3",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p3": {
+				"minecraft:variant": {
+					"value": 2
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p4",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p4": {
+				"minecraft:variant": {
+					"value": 3
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p5",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p5": {
+				"minecraft:variant": {
+					"value": 4
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p6",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p6": {
+				"minecraft:variant": {
+					"value": 5
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p7",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p7": {
+				"minecraft:variant": {
+					"value": 6
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p8",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p8": {
+				"minecraft:variant": {
+					"value": 7
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p9",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p9": {
+				"minecraft:variant": {
+					"value": 8
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p10",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p10": {
+				"minecraft:variant": {
+					"value": 9
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p11",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p11": {
+				"minecraft:variant": {
+					"value": 10
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p12",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p12": {
+				"minecraft:variant": {
+					"value": 11
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p13",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p13": {
+				"minecraft:variant": {
+					"value": 12
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p14",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p14": {
+				"minecraft:variant": {
+					"value": 13
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p15",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p15": {
+				"minecraft:variant": {
+					"value": 14
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p16",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p16": {
+				"minecraft:variant": {
+					"value": 15
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p17",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p17": {
+				"minecraft:variant": {
+					"value": 16
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p18",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p18": {
+				"minecraft:variant": {
+					"value": 17
+				},
+        "minecraft:timer": {
+          "time": [ 2.0, 2.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p19",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p19": {
+				"minecraft:variant": {
+					"value": 18
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p20",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p20": {
+				"minecraft:variant": {
+					"value": 19
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p21",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p21": {
+				"minecraft:variant": {
+					"value": 20
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p22",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p22": {
+				"minecraft:variant": {
+					"value": 21
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:p23",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:p23": {
+				"minecraft:variant": {
+					"value": 22
+				},
+        "minecraft:timer": {
+          "time": [ 0.3, 0.3 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:kill",
+            "target": "self"
+          }
+        }
+			},
+			"minecraft:kill": {
+				"minecraft:transformation": {
+					"into": "avengers:air",
+					"delay": 0.01,
+					"drop_equipment": false
+				}
+                  }
+		},
+		"components": {
+
+			"minecraft:type_family": {
+				"family": ["portal"]
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:damage_sensor": [{
+				"on_damage": {
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"value": "player"
+					}
+				},
+				"deals_damage": false
+			}],
+			"minecraft:scale": {
+				"value": 1.0
+			},
+			"minecraft:push_through": {
+				"value": 1
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			},
+				"minecraft:variant": {
+					"value": 0
+				},
+			"minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+}
+		},
+		"events": {
+      "minecraft:entity_born": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:p1"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:p1"
+              ]
+            }
+          }
+        ]
+      },
+			"minecraft:p1": {
+				"add": {
+					"component_groups": [
+						"minecraft:p1"
+					]
+				}
+			},
+			"minecraft:p2": {
+				"add": {
+					"component_groups": [
+						"minecraft:p2"
+					]
+				}
+			},
+			"minecraft:p3": {
+				"add": {
+					"component_groups": [
+						"minecraft:p3"
+					]
+				}
+			},
+			"minecraft:p4": {
+				"add": {
+					"component_groups": [
+						"minecraft:p4"
+					]
+				}
+			},
+			"minecraft:p5": {
+				"add": {
+					"component_groups": [
+						"minecraft:p5"
+					]
+				}
+			},
+			"minecraft:p6": {
+				"add": {
+					"component_groups": [
+						"minecraft:p6"
+					]
+				}
+			},
+			"minecraft:p7": {
+				"add": {
+					"component_groups": [
+						"minecraft:p7"
+					]
+				}
+			},
+			"minecraft:p8": {
+				"add": {
+					"component_groups": [
+						"minecraft:p8"
+					]
+				}
+			},
+			"minecraft:p9": {
+				"add": {
+					"component_groups": [
+						"minecraft:p9"
+					]
+				}
+			},
+			"minecraft:p10": {
+				"add": {
+					"component_groups": [
+						"minecraft:p10"
+					]
+				}
+			},
+			"minecraft:p11": {
+				"add": {
+					"component_groups": [
+						"minecraft:p11"
+					]
+				}
+			},
+			"minecraft:p12": {
+				"add": {
+					"component_groups": [
+						"minecraft:p12"
+					]
+				}
+			},
+			"minecraft:p13": {
+				"add": {
+					"component_groups": [
+						"minecraft:p13"
+					]
+				}
+			},
+			"minecraft:p14": {
+				"add": {
+					"component_groups": [
+						"minecraft:p14"
+					]
+				}
+			},
+			"minecraft:p15": {
+				"add": {
+					"component_groups": [
+						"minecraft:p15"
+					]
+				}
+			},
+			"minecraft:p16": {
+				"add": {
+					"component_groups": [
+						"minecraft:p16"
+					]
+				}
+			},
+			"minecraft:p17": {
+				"add": {
+					"component_groups": [
+						"minecraft:p17"
+					]
+				}
+			},
+			"minecraft:p18": {
+				"add": {
+					"component_groups": [
+						"minecraft:p18"
+					]
+				}
+			},
+			"minecraft:p19": {
+				"add": {
+					"component_groups": [
+						"minecraft:p19"
+					]
+				}
+			},
+			"minecraft:p20": {
+				"add": {
+					"component_groups": [
+						"minecraft:p20"
+					]
+				}
+			},
+			"minecraft:p21": {
+				"add": {
+					"component_groups": [
+						"minecraft:p21"
+					]
+				}
+			},
+			"minecraft:p22": {
+				"add": {
+					"component_groups": [
+						"minecraft:p22"
+					]
+				}
+			},
+			"minecraft:p23": {
+				"add": {
+					"component_groups": [
+						"minecraft:p23"
+					]
+				}
+			},
+			"minecraft:kill": {
+				"add": {
+					"component_groups": [
+						"minecraft:kill"
+					]
+				}
+			}
+		}
+	}
+}

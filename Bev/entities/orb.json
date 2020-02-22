@@ -1,0 +1,63 @@
+{
+  "minecraft:entity": {
+		"format_version": "1.8.0",
+    "description": {
+      "identifier": "avengers:orb_power_stone",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+         "minecraft:open": {
+				"minecraft:transformation": {
+					"into": "avengers:orb_open",
+          "transformation_sound": "shulkerbox.open",
+					"delay": 0.0,
+					"drop_equipment": false
+				}
+       }
+    },
+
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "orb" ]
+      },
+			"minecraft:is_stackable": {},
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 0.4
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+        "minecraft:damage_sensor": [
+                                {
+                    "on_damage": {
+                         "filters":
+                              {"test" :  "is_family", "subject" : "other", "value" :  "player" },
+                         "event": "minecraft:open"
+                                 },
+                    "deals_damage": false
+              }
+           ],
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:open": {
+        "add": {
+          "component_groups": [
+            "minecraft:open"
+          ]
+        }
+      }
+    }
+  }
+}

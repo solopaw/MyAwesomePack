@@ -1,0 +1,127 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "avengers:vision_defeated_stone",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+			"minecraft:life": {
+        "minecraft:timer": {
+          "time": [ 3.5, 3.5 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:kill",
+            "target": "self"
+          }
+       }
+                  },
+     			"minecraft:kill": {
+				"minecraft:transformation": {
+					"into": "avengers:air",
+					"delay": 0.0,
+					"drop_equipment": true
+				}
+                  }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "vision" ]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 0.4
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/mind_stone.json"
+      },
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+        "minecraft:damage_sensor": [
+                                {
+                    "on_damage": {
+                         "filters":
+                              {"test" :  "is_family", "subject" : "other", "value" :  "player" },
+                         "event": "minecraft:open"
+                                 },
+                    "deals_damage": false
+              }
+           ],
+			"minecraft:is_stackable": {},
+      "minecraft:nameable": {
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:entity_born": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_born": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_transformed": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:kill": {
+        "add": {
+          "component_groups": [
+            "minecraft:kill"
+          ]
+        }
+      }
+    }
+  }
+}

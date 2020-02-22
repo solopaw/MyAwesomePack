@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.snap": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function snap"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "query.is_sheared"
+						}
+					],
+					"on_entry": [
+						"/function snap"
+					]
+				}
+			}
+		}
+	}
+}

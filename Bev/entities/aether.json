@@ -1,0 +1,69 @@
+{
+  "minecraft:entity": {
+		"format_version": "1.8.0",
+    "description": {
+      "identifier": "avengers:aether",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+         "minecraft:open": {
+				"minecraft:transformation": {
+					"into": "avengers:air",
+          "transformation_sound": "explode",
+					"delay": 0.0,
+					"drop_equipment": true
+				}
+       }
+    },
+
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "aether" ]
+      },
+			"minecraft:is_stackable": {},
+      "minecraft:collision_box": {
+        "width": 0.3,
+        "height": 1.5
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/reality_stone.json"
+      },
+			"minecraft:push_through": {
+				"value": 1
+			},
+        "minecraft:damage_sensor": [
+                                {
+                    "on_damage": {
+                         "filters":
+                              {"test" :  "is_family", "subject" : "other", "value" :  "player" },
+                         "event": "minecraft:open"
+                                 },
+                    "deals_damage": false
+              }
+           ],
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:open": {
+        "add": {
+          "component_groups": [
+            "minecraft:open"
+          ]
+        }
+      }
+    }
+  }
+}

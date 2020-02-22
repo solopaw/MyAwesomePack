@@ -1,0 +1,196 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "avengers:red_power",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+			"minecraft:life": {
+        "minecraft:timer": {
+          "time": [ 10.0, 10.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:kill",
+            "target": "self"
+          }
+       }
+                  },
+     			"minecraft:kill": {
+				"minecraft:transformation": {
+					"into": "avengers:air",
+					"delay": 0.0,
+					"drop_equipment": true
+				}
+                  },
+      "minecraft:red1": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "minecraft:red2": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "hero" ]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+
+      "minecraft:movement": {
+        "value": 0.1
+      },
+      "minecraft:navigation.float": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.float_wander": {
+        "xz_dist": 10,
+        "y_dist": 7,
+        "y_offset": -2.0,
+        "random_reselect": true,
+        "float_duration": [ 0.1, 0.35 ]
+      },
+      "minecraft:can_fly": {
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 25,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                }
+              ]
+            },
+            "max_dist": 35
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
+            "max_dist": 35
+          }
+        ],
+        "must_see": true,
+        "must_see_forget_duration": 17.0
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:entity_born": {
+        "randomize": [
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "minecraft:red1",
+                "minecraft:life"
+              ]
+            }
+          },
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "minecraft:red2",
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "minecraft:red1",
+                "minecraft:life"
+              ]
+            }
+          },
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "minecraft:red2",
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:kill": {
+        "add": {
+          "component_groups": [
+            "minecraft:kill"
+          ]
+        }
+      }
+    }
+  }
+}

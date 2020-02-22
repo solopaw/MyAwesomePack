@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.reality": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"walking": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/function reality"
+					]
+				},
+				"walking": {
+					"transitions": [
+						{
+							"default": "query.is_baby"
+						}
+					],
+					"on_entry": [
+						"/function reality"
+					]
+				}
+			}
+		}
+	}
+}

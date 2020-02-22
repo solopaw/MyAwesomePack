@@ -1,0 +1,22 @@
+{
+  "minecraft:entity": {
+		"format_version": "1.8.0",
+    "description": {
+      "identifier": "avengers:air",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+    "component_groups": {
+
+    },
+    "components": {
+
+	   "minecraft:physics": {
+        "has_collision": false
+     }
+    },
+    "events": {
+    }
+  }
+}

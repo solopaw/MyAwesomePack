@@ -1,0 +1,103 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "avengers:snap",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+			"minecraft:life": {
+        "minecraft:timer": {
+          "time": [ 0.9, 0.9 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:kill",
+            "target": "self"
+          }
+       }
+                  },
+     			"minecraft:kill": {
+				"minecraft:transformation": {
+					"into": "avengers:air",
+					"delay": 0.01,
+					"drop_equipment": true
+				}
+                  }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "gauntlet" ]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
+      },
+			"minecraft:push_through": {
+				"value": 1
+			},
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 6.0,
+        "probability": 1.0
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+		"minecraft:damage_sensor": [
+		  {
+		    "cause": "all",
+			"deals_damage": false
+		  }
+		],
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:entity_born": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 100,
+            "add": {
+              "component_groups": [
+                "minecraft:life"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:kill": {
+        "add": {
+          "component_groups": [
+            "minecraft:kill"
+          ]
+        }
+      }
+    }
+  }
+}

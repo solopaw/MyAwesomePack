@@ -1,0 +1,1 @@
+enchant @p loyalty 3
