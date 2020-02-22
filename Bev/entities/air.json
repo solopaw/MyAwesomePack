@@ -2,7 +2,7 @@
   "minecraft:entity": {
 		"format_version": "1.8.0",
     "description": {
-      "identifier": "avengers:air",
+      "identifier": "ae:air",
       "is_spawnable": false,
       "is_summonable": false,
       "is_experimental": false
